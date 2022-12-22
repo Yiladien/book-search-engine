@@ -12,12 +12,22 @@ const typeDefs = gql`
 
   type Query {
     helloWorld: String
+    users: [User]
     user(username: String!): User
+  }
+
+  type Mutation {
+    addUser(username: String!, email: String!, password: String!): User
+    login(email: String!, password: String!): User
   }
 `;
 
 // export the typeDefs
 module.exports = typeDefs;
+
+// type Auth {
+//   token: ID!
+//   user: User
 
 // type User {
 //   _id: ID
@@ -25,15 +35,7 @@ module.exports = typeDefs;
 //   email: String
 // }
 
-// type Auth {
-
-//   token: ID!
-//   user: User
-// }
-
 // type Mutation {
-//   login(email: String!, password: String!): Auth
-//   addUser(username: String!, email: String!, password: String!): Auth
 //   addBook(thoughtText: String!): Book
 // }
 
