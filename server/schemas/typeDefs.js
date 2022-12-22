@@ -7,22 +7,35 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
+    bookCount: Int
   }
 
-  type Mutation {
-    login(email: String!, password: String!): Auth
-    addUser(username: String!, email: String!, password: String!): Auth
-    addBook(thoughtText: String!): Book
-  }
-
-  type Auth {
-    token: ID!
-    user: User
+  type Query {
+    helloWorld: String
+    user(username: String!): User
   }
 `;
 
 // export the typeDefs
 module.exports = typeDefs;
+
+// type User {
+//   _id: ID
+//   username: String
+//   email: String
+// }
+
+// type Auth {
+
+//   token: ID!
+//   user: User
+// }
+
+// type Mutation {
+//   login(email: String!, password: String!): Auth
+//   addUser(username: String!, email: String!, password: String!): Auth
+//   addBook(thoughtText: String!): Book
+// }
 
 // type Thought {
 //   _id: ID
